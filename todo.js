@@ -8,56 +8,40 @@ const todoList = () => {
   };
 
   const overdue = () => {
-    // Write the date check condition here and return the array of overdue items accordingly.
     return all.filter(
       (item) => item.dueDate < new Date().toLocaleDateString("en-CA")
     );
-    // FILL YOUR CODE HERE
-    // ..
-    // ..
-    // ..
   };
 
   const dueToday = () => {
-    // Write the date check condition here and return the array of todo items that are due today accordingly.
     return all.filter(
       (item) => item.dueDate === new Date().toLocaleDateString("en-CA")
     );
-    // FILL YOUR CODE HERE
-    // ..
-    // ..
-    // ..
   };
 
   const dueLater = () => {
-    // Write the date check condition here and return the array of todo items that are due later accordingly.
     return all.filter(
       (item) => item.dueDate > new Date().toLocaleDateString("en-CA")
     );
-    // FILL YOUR CODE HERE
-    // ..
-    // ..
-    // ..
   };
 
   const toDisplayableList = (list) => {
-    // Format the To-Do list here, and return the output string as per the format given above.
     const dsl = [];
-    list.forEach((e) => {
-      if (e.dueDate === today) {
-        if (e.completed === true) {
-          const a = "[x] " + e.title;
+    list.forEach((element) => {
+      if (element.dueDate === today) {
+        if (element.completed === true) {
+          const a = "[x] " + element.title;
           dsl.push(a);
         } else {
-          const a = "[ ] " + e.title;
+          const a = "[ ] " + element.title;
           dsl.push(a);
         }
       } else {
-        if (e.completed === true) {
-          const a = "[x] " + e.title + " " + e.dueDate;
+        if (element.completed === true) {
+          const a = "[x] " + element.title + " " + element.dueDate;
           dsl.push(a);
         } else {
-          const a = "[ ] " + e.title + " " + e.dueDate;
+          const a = "[ ] " + element.title + " " + element.dueDate;
           dsl.push(a);
         }
       }
@@ -75,11 +59,6 @@ const todoList = () => {
       }
     }
     return g;
-    // FILL YOUR CODE HERE
-    // ..
-    // ..
-    // ..
-    // return OUTPUT_STRING
   };
 
   return {
